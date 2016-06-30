@@ -20,7 +20,7 @@ $ cd mbed-os-example-blinky
 Invoke `mbed compile` specifying the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`):
 
 ```
-mbed compile -m K64F -t GCC_ARM
+$ mbed compile -m K64F -t GCC_ARM
 ```
 
 Your PC may take a few minutes to compile your code. At the end you should get the following result:
