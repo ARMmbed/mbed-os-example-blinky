@@ -11,7 +11,6 @@ From the command line, clone this repository using git
 ```
 $ git clone https://github.com/ARMmbed/mbed-os-blinky
 cd mbed-os-blinky
-
 ```
 ### Update the example
 
@@ -19,7 +18,6 @@ Download mbed OS sources to your local copy.
 
 ```
 mbed update
-
 ```
 
 ### Compile the example
@@ -28,7 +26,6 @@ Invoke `mbed compile` specifying the name of the platform and the toolchain
 
 ```
 mbed compile -m K64F -t GCC_ARM
-
 ```
 
 Your PC may take a few minutes to compile your code. At the end you should get the following result:
@@ -53,7 +50,6 @@ Total Static RAM memory (data + bss): 10788 bytes
 Total RAM memory (data + bss + heap + stack): 109096 bytes
 Total Flash memory (text + data + misc): 68238 bytes
 Image: .\.build\K64F\GCC_ARM\mbed-os-blinky.bin                  
-
 ```
 
 ### Program your board
@@ -75,7 +71,16 @@ Successful exports:
   * K64F::uvision       .\projectfiles\uvision_K64F\Unnamed_Project
 ```
 
-Now you can start MDK and open the project generated above.
+Now you can start MDK and follow these steps to debug the application:
+
+1. Import the uVision project generated earlier
+2. Compile your application and generate a `.axf` file
+3. Make sure uVision is configured to debug over CMSIS-DAP
+Menu Project, Options for Target '...', Debug tab, Use CMSIS-DAP Debugger.
+4. Set breakpoints and start a debug session
+
+![Image of uVision](img/uvision.png)
+
 
 ## Troubleshooting
 
@@ -87,6 +92,8 @@ If not, you can update the version easily:
 ```
 pip install mbed-cli --upgrade
 ```
+1. If using Keil MDK, make sure you have a license installed.
+There is a 32KB restriction for evaluation licenses.
 
 
 
