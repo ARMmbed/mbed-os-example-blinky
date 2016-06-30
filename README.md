@@ -11,16 +11,8 @@ Please install [mbed CLI](https://github.com/ARMmbed/EPR-Getting-Started#setting
 From the command line, clone this repository using git:
 
 ```
-$ git clone https://github.com/ARMmbed/mbed-os-example-blinky
+$ mbed import mbed-os-example-blinky
 cd mbed-os-example-blinky
-```
-
-### Update the example
-
-Download mbed OS sources to your local copy:
-
-```
-mbed update
 ```
 
 ### Compile the example
@@ -59,7 +51,7 @@ Image: .\.build\K64F\GCC_ARM\mbed-os-blinky.bin
 
 1. Connect your mbed device to the computer over USB.
 1. Copy the binary file to the mbed device .
-1. Press the reset button to start the program. 
+1. Press the reset button to start the program.
 
 You should see the LED of your platform turning on and off.
 
@@ -93,19 +85,15 @@ To debug the application:
 ## Troubleshooting
 
 1. Make sure `mbed-cli` is working correctly and its version is greater than `0.8.0`
- 
+
  ```
  mbed-cli --version
  ```
- 
+
  If not, you can update it easily:
- 
+
  ```
  pip install mbed-cli --upgrade
  ```
 
 2. If using Keil MDK, make sure you have a license installed. There is a 32KB restriction for evaluation licenses.
-
-
-
-
