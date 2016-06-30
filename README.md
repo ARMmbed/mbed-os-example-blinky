@@ -4,18 +4,16 @@ This is a very simple guide, reviewing the steps required to get Blinky working 
 
 Please install [mbed CLI](https://github.com/ARMmbed/EPR-Getting-Started#setting-up-your-environment).
 
-## Compile and download the application
+## Get the example application!
 
-### Clone the example
-
-From the command line, clone this repository using git:
+From the command line, import the example:
 
 ```
 $ mbed import mbed-os-example-blinky
 $ cd mbed-os-example-blinky
 ```
 
-### Compile the example
+### Now compile
 
 Invoke `mbed compile` specifying the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`):
 
