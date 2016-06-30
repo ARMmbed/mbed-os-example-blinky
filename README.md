@@ -12,7 +12,7 @@ From the command line, clone this repository using git:
 
 ```
 $ mbed import mbed-os-example-blinky
-cd mbed-os-example-blinky
+$ cd mbed-os-example-blinky
 ```
 
 ### Compile the example
