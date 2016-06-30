@@ -11,8 +11,8 @@ Please install [mbed CLI](https://github.com/ARMmbed/EPR-Getting-Started#setting
 From the command line, clone this repository using git:
 
 ```
-$ git clone https://github.com/ARMmbed/mbed-os-blinky
-cd mbed-os-blinky
+$ git clone https://github.com/ARMmbed/mbed-os-example-blinky
+cd mbed-os-example-blinky
 ```
 
 ### Update the example
@@ -61,7 +61,7 @@ Image: .\.build\K64F\GCC_ARM\mbed-os-blinky.bin
 1. Copy the binary file to the mbed device .
 1. Press the reset button to start the program. 
 
-You should see the LED of your platform turning on and off. 
+You should see the LED of your platform turning on and off.
 
 Congratulations if you managed to complete this test!
 
@@ -70,14 +70,14 @@ Congratulations if you managed to complete this test!
 From the command line, run the following command:
 
 ```
-mbed export -m K64F -i uvision
+mbed export -m K64F -i uvision -n mbed-os-example-blinky
 ```
 
 You should see the following output:
 
 ```
 Successful exports:
-  * K64F::uvision       .\projectfiles\uvision_K64F\Unnamed_Project
+  * K64F::uvision       .\projectfiles\uvision_K64F\mbed-os-example-blinky
 ```
 
 To debug the application:
