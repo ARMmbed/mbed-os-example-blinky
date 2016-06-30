@@ -2,7 +2,7 @@
 
 This is a very simple guide, reviewing the steps required to get Blinky working on an mbed OS platform.
 
-Please install [mbed CLI](https://github.com/ARMmbed/EPR-Getting-Started#setting-up-your-environment).
+Please install [mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli).
 
 ## Get the example application!
 
