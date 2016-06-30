@@ -22,7 +22,7 @@ mbed update
 
 ### Compile the example
 
-Invoke `mbed compile` specifying the name of the platform and the toolchain
+Invoke `mbed compile` specifying the name of your platform and your favourite toolchain (`GCC_ARM`, `ARM`, `IAR`)
 
 ```
 mbed compile -m K64F -t GCC_ARM
@@ -75,25 +75,24 @@ Now you can start MDK and follow these steps to debug the application:
 
 1. Import the uVision project generated earlier
 2. Compile your application and generate a `.axf` file
-3. Make sure uVision is configured to debug over CMSIS-DAP
-Menu Project, Options for Target '...', Debug tab, Use CMSIS-DAP Debugger.
+3. Make sure uVision is configured to debug over CMSIS-DAP (Menu Project, Options for Target '...', Debug tab, Use CMSIS-DAP Debugger)
 4. Set breakpoints and start a debug session
 
 ![Image of uVision](img/uvision.png)
 
-
 ## Troubleshooting
 
-1. Make sure mbed-cli is working correctly and version is greater than `0.8.0`
+1. Make sure `mbed-cli` is working correctly and its version is greater than `0.8.0`
 ```
 mbed-cli --version
 ```
-If not, you can update the version easily:
+If not, you can update it easily:
 ```
 pip install mbed-cli --upgrade
 ```
-1. If using Keil MDK, make sure you have a license installed.
+2. If using Keil MDK, make sure you have a license installed.
 There is a 32KB restriction for evaluation licenses.
+
 
 
 
