@@ -9,16 +9,16 @@ Please install [mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cl
 From the command line, import the example:
 
 ```
-$ mbed import mbed-os-example-blinky
-$ cd mbed-os-example-blinky
+mbed import mbed-os-example-blinky
+cd mbed-os-example-blinky
 ```
 
 ### Now compile
 
-Invoke `mbed compile` specifying the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`):
+Invoke `mbed compile` specifying the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler 5:
 
 ```
-$ mbed compile -m K64F -t GCC_ARM
+mbed compile -m K64F -t ARM
 ```
 
 Your PC may take a few minutes to compile your code. At the end you should get the following result:
@@ -28,21 +28,20 @@ Your PC may take a few minutes to compile your code. At the end you should get t
 +----------------------------+-------+-------+------+
 | Module                     | .text | .data | .bss |
 +----------------------------+-------+-------+------+
-| Fill                       |   176 |     4 | 2246 |
-| Misc                       | 37291 |  2224 | 2160 |
-| core/hal                   | 15448 |    16 |  568 |
-| core/rtos                  |  7318 |    24 | 2662 |
-| features/FEATURE_IPV4      |    96 |     0 |   48 |
-| frameworks/greentea-client |  1561 |    52 |   52 |
-| frameworks/utest           |  2988 |     0 |  732 |
-| Subtotals                  | 64878 |  2320 | 8468 |
+| Misc                       | 13939 |    24 | 1372 |
+| core/hal                   | 16993 |    96 |  296 |
+| core/rtos                  |  7384 |    92 | 4204 |
+| features/FEATURE_IPV4      |    80 |     0 |  176 |
+| frameworks/greentea-client |  1830 |    60 |   44 |
+| frameworks/utest           |  2392 |   512 |  292 |
+| Subtotals                  | 42618 |   784 | 6384 |
 +----------------------------+-------+-------+------+
-Allocated Heap: 65540 bytes
-Allocated Stack: 32768 bytes
-Total Static RAM memory (data + bss): 10788 bytes
-Total RAM memory (data + bss + heap + stack): 109096 bytes
-Total Flash memory (text + data + misc): 68238 bytes
-Image: .\.build\K64F\GCC_ARM\mbed-os-blinky.bin                  
+Allocated Heap: unknown
+Allocated Stack: unknown
+Total Static RAM memory (data + bss): 7168 bytes
+Total RAM memory (data + bss + heap + stack): 7168 bytes
+Total Flash memory (text + data + misc): 43402 bytes
+Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin             
 ```
 
 ### Program your board
@@ -72,7 +71,7 @@ Successful exports:
 
 To debug the application:
 
-1. Start MDK.
+1. Start uVision.
 1. Import the uVision project generated earlier.
 1. Compile your application and generate an `.axf` file.
 1. Make sure uVision is configured to debug over CMSIS-DAP (From the Project menu > Options for Target '...' > Debug tab > Use CMSIS-DAP Debugger).
@@ -85,7 +84,7 @@ To debug the application:
 1. Make sure `mbed-cli` is working correctly and its version is greater than `0.8.0`
 
  ```
- mbed-cli --version
+ mbed --version
  ```
 
  If not, you can update it easily:
@@ -94,4 +93,4 @@ To debug the application:
  pip install mbed-cli --upgrade
  ```
 
-2. If using Keil MDK, make sure you have a license installed. There is a 32KB restriction for evaluation licenses.
+2. If using Keil MDK, make sure you have a license installed. [MDK-Lite](http://www.keil.com/arm/mdk.asp) has a 32KB restriction on code size.
