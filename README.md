@@ -9,7 +9,7 @@ Please install [mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cl
 From the command line, import the example:
 
 ```
-mbed import mbed-os-example-blinky
+mbed import https://github.com/ARMmbed/mbed-os-example-blinky
 cd mbed-os-example-blinky
 ```
 
