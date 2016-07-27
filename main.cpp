@@ -2,20 +2,13 @@
 #include "rtos.h"
 
 DigitalOut led1(LED1);
-DigitalOut led2(LED2);
 
-void led2_thread(void const *args) {
-    while (true) {
-        led2 = !led2;
-        Thread::wait(1000);
-    }
-}
-
+// main() runs in its own thread in the OS
+// (note the calls to Thread::wait below for delays)
 int main() {
-    Thread thread(led2_thread);
-
     while (true) {
         led1 = !led1;
         Thread::wait(500);
     }
 }
+
