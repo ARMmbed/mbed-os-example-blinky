@@ -41,7 +41,7 @@ Allocated Stack: unknown
 Total Static RAM memory (data + bss): 7168 bytes
 Total RAM memory (data + bss + heap + stack): 7168 bytes
 Total Flash memory (text + data + misc): 43402 bytes
-Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin             
+Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin
 ```
 
 ### Program your board
