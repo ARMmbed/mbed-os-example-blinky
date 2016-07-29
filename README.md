@@ -66,7 +66,7 @@ You should see the following output:
 
 ```
 Successful exports:
-  * K64F::uvision       .\projectfiles\uvision_K64F\mbed-os-example-blinky
+  * K64F::uvision       .\projectfiles\uvision_K64F\Unnamed_Project
 ```
 
 To debug the application:
@@ -81,7 +81,7 @@ To debug the application:
 
 ## Troubleshooting
 
-1. Make sure `mbed-cli` is working correctly and its version is greater than `0.8.0`
+1. Make sure `mbed-cli` is working correctly and its version is greater than `0.8.9`
 
  ```
  mbed --version
