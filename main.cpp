@@ -1,5 +1,4 @@
 #include "mbed.h"
-#include "rtos.h"
 
 DigitalOut led1(LED1);
 
