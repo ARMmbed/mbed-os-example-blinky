@@ -62,13 +62,6 @@ From the command line, run the following command:
 mbed export -m K64F -i uvision
 ```
 
-You should see the following output:
-
-```
-Successful exports:
-  * K64F::uvision       .\projectfiles\uvision_K64F\Unnamed_Project
-```
-
 To debug the application:
 
 1. Start uVision.
