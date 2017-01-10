@@ -74,7 +74,7 @@ To debug the application:
 
 ## Troubleshooting
 
-1. Make sure `mbed-cli` is working correctly and its version is greater than `0.8.9`
+1. Make sure `mbed-cli` is working correctly and its version is greater than `0.9.1`
 
  ```
  mbed --version
