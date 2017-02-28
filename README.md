@@ -1,12 +1,12 @@
 # Getting started with Blinky on mbed OS
 
-This is a very simple guide, reviewing the steps required to get Blinky working on an mbed OS platform.
+This guide reviews the steps required to get Blinky working on an mbed OS platform.
 
 Please install [mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli).
 
-## Get the example application!
+## Import the example application
 
-From the command line, import the example:
+From the command-line, import the example:
 
 ```
 mbed import mbed-os-example-blinky
@@ -15,13 +15,13 @@ cd mbed-os-example-blinky
 
 ### Now compile
 
-Invoke `mbed compile` specifying the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler 5:
+Invoke `mbed compile`, and specify the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler 5:
 
 ```
 mbed compile -m K64F -t ARM
 ```
 
-Your PC may take a few minutes to compile your code. At the end you should get the following result:
+Your PC may take a few minutes to compile your code. At the end, you see the following result:
 
 ```
 [snip]
@@ -47,16 +47,14 @@ Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin
 ### Program your board
 
 1. Connect your mbed device to the computer over USB.
-1. Copy the binary file to the mbed device .
+1. Copy the binary file to the mbed device.
 1. Press the reset button to start the program.
 
-You should see the LED of your platform turning on and off.
+The LED on your platform turns on and off.
 
-Congratulations if you managed to complete this test!
+## Export the project to Keil MDK, and debug your application
 
-## Export the project to Keil MDK and debug your application
-
-From the command line, run the following command:
+From the command-line, run the following command:
 
 ```
 mbed export -m K64F -i uvision
@@ -66,9 +64,9 @@ To debug the application:
 
 1. Start uVision.
 1. Import the uVision project generated earlier.
-1. Compile your application and generate an `.axf` file.
+1. Compile your application, and generate an `.axf` file.
 1. Make sure uVision is configured to debug over CMSIS-DAP (From the Project menu > Options for Target '...' > Debug tab > Use CMSIS-DAP Debugger).
-1. Set breakpoints and start a debug session.
+1. Set breakpoints, and start a debug session.
 
 ![Image of uVision](img/uvision.png)
 
@@ -80,10 +78,10 @@ To debug the application:
  mbed --version
  ```
 
- If not, you can update it easily:
+ If not, you can update it:
 
  ```
  pip install mbed-cli --upgrade
  ```
 
-2. If using Keil MDK, make sure you have a license installed. [MDK-Lite](http://www.keil.com/arm/mdk.asp) has a 32KB restriction on code size.
+2. If using Keil MDK, make sure you have a license installed. [MDK-Lite](http://www.keil.com/arm/mdk.asp) has a 32 KB restriction on code size.
