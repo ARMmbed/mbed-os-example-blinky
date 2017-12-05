@@ -52,6 +52,10 @@ Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin
 
 The LED on your platform turns on and off.
 
+## Serial port output
+
+The program does also print the blink count for every 10th blink. If you want to see the printout, please see the (Mbed OS instructions for serial)[https://os.mbed.com/docs/v5.6/tutorials/serial-communication.html].
+
 ## Export the project to Keil MDK, and debug your application
 
 From the command-line, run the following command:
@@ -85,3 +89,10 @@ To debug the application:
  ```
 
 2. If using Keil MDK, make sure you have a license installed. [MDK-Lite](http://www.keil.com/arm/mdk.asp) has a 32 KB restriction on code size.
+
+# Board specific information
+
+## Realtek RTL8195AM
+
+This board does not have any LEDs connected to the main MCU, all the LEDs are connected to the DAPLINK host CPU. Therefore, for the board to work one has to connect an LED directly to <need to specify where!>.
+
