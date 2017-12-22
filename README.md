@@ -72,16 +72,4 @@ To debug the application:
 
 ## Troubleshooting
 
-1. Make sure `mbed-cli` is working correctly and its version is `>1.0.0`
-
- ```
- mbed --version
- ```
-
- If not, you can update it:
-
- ```
- pip install mbed-cli --upgrade
- ```
-
-2. If using Keil MDK, make sure you have a license installed. [MDK-Lite](http://www.keil.com/arm/mdk.asp) has a 32 KB restriction on code size.
+If you have problems, you can review the [documentation](https://os.mbed.com/docs/latest/tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
