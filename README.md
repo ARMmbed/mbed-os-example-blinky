@@ -52,24 +52,6 @@ Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin
 
 The LED on your platform turns on and off.
 
-## Export the project to Keil MDK, and debug your application
-
-From the command-line, run the following command:
-
-```
-mbed export -m K64F -i uvision
-```
-
-To debug the application:
-
-1. Start uVision.
-1. Import the uVision project generated earlier.
-1. Compile your application, and generate an `.axf` file.
-1. Make sure uVision is configured to debug over CMSIS-DAP (From the Project menu > Options for Target '...' > Debug tab > Use CMSIS-DAP Debugger).
-1. Set breakpoints, and start a debug session.
-
-![Image of uVision](img/uvision.png)
-
 ## Troubleshooting
 
 If you have problems, you can review the [documentation](https://os.mbed.com/docs/latest/tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
