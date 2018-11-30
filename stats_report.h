@@ -41,17 +41,6 @@ public:
         printf("CPU ID: 0x%lx \r\n", sys_stats.cpu_id);
         printf("Compiler ID: %d \r\n", sys_stats.compiler_id);
         printf("Compiler Version: %ld \r\n", sys_stats.compiler_version);
-
-        for (int i = 0; i < MBED_MAX_MEM_REGIONS; i++) {
-            if (sys_stats.ram_size[i] != 0) {
-                printf("RAM%d: Start 0x%lx Size: 0x%lx \r\n", i, sys_stats.ram_start[i], sys_stats.ram_size[i]);
-            }
-        }
-        for (int i = 0; i < MBED_MAX_MEM_REGIONS; i++) {
-            if (sys_stats.rom_size[i] != 0) {
-                printf("ROM%d: Start 0x%lx Size: 0x%lx \r\n", i, sys_stats.rom_start[i], sys_stats.rom_size[i]);
-            }
-        }
     }
 
     ~SystemReport(void)
