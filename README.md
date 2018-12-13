@@ -114,7 +114,7 @@ To view the serial output you can use any terminal client of your choosing such 
 
 The default baud rate for this application is set to `115200` and may be modified in the `mbed_app.json` file.
 
-You can find more information on the Mbed OS configuration tools and serail communication in Mbed OS in the related [related links section](#related-links).
+You can find more information on the Mbed OS configuration tools and serial communication in Mbed OS in the related [related links section](#related-links).
 
 The output should contain the following block transmitted at the blinking LED frequency (actual values may vary depending on your target, build profile, and toolchain):
 
