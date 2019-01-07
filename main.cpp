@@ -16,7 +16,7 @@ int main()
     while (true) {
         // Blink LED and wait 0.5 seconds
         led1 = !led1;
-        wait(0.5f);
+        wait_ms(500);
 
         // Following the main thread wait, report on the current system status
         sys_state.report_state();
