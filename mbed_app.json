@@ -1,7 +1,6 @@
 {
     "target_overrides": {
         "*": {
-            "platform.stdio-baud-rate": 115200,
             "platform.stack-stats-enabled": true,
             "platform.heap-stats-enabled": true,
             "platform.cpu-stats-enabled": true,
