@@ -1,8 +1,8 @@
 # Getting started example for Mbed OS
 
-This guide reviews the steps required to get Blinky with the addition of dynamic OS statistics working on an Mbed OS platform.
+This guide reviews the steps required to get Blinky with the addition of dynamic OS statistics working on an Mbed OS platform. (Note: To see a rendered example you can import into the Arm Online Compiler, please see our [quick start](https://os.mbed.com/docs/mbed-os/latest/quick-start/online-with-the-online-compiler.html#importing-the-code).)
 
-Please install [mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli).
+Please install [Mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli).
 
 ## Import the example application
 
@@ -50,8 +50,8 @@ Image: ./BUILD/K64F/GCC_ARM/mbed-os-example-blinky.bin
 
 ### Program your board
 
-1. Connect your mbed device to the computer over USB.
-1. Copy the binary file to the mbed device.
+1. Connect your Mbed device to the computer over USB.
+1. Copy the binary file to the Mbed device.
 1. Press the reset button to start the program.
 
 The LED on your platform turns on and off. The main thread will additionally take a snapshot of the device's runtime statistics and display it over serial to your PC. The snapshot includes:
