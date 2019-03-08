@@ -15,7 +15,7 @@ cd mbed-os-example-blinky
 
 ### Now compile
 
-Invoke `mbed compile`, and specify the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler 5:
+Invoke `mbed compile`, and specify the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler:
 
 ```
 mbed compile -m K64F -t ARM
@@ -24,28 +24,16 @@ mbed compile -m K64F -t ARM
 Your PC may take a few minutes to compile your code. At the end, you see the following result:
 
 ```
-[snip]
-+----------------------------+-------+-------+------+
-| Module             |     .text |    .data |     .bss |
-|--------------------|-----------|----------|----------|
-| [fill]             |    98(+0) |    0(+0) | 2211(+0) |
-| [lib]/c.a          | 27835(+0) | 2472(+0) |   89(+0) |
-| [lib]/gcc.a        |  3168(+0) |    0(+0) |    0(+0) |
-| [lib]/misc         |   248(+0) |    8(+0) |   28(+0) |
-| [lib]/nosys.a      |    32(+0) |    0(+0) |    0(+0) |
-| main.o             |   924(+0) |    0(+0) |   12(+0) |
-| mbed-os/components |   134(+0) |    0(+0) |    0(+0) |
-| mbed-os/drivers    |    56(+0) |    0(+0) |    0(+0) |
-| mbed-os/features   |    42(+0) |    0(+0) |  184(+0) |
-| mbed-os/hal        |  2087(+0) |    8(+0) |  152(+0) |
-| mbed-os/platform   |  3633(+0) |  260(+0) |  209(+0) |
-| mbed-os/rtos       |  9370(+0) |  168(+0) | 6053(+0) |
-| mbed-os/targets    |  9536(+0) |   12(+0) |  382(+0) |
-| Subtotals          | 57163(+0) | 2928(+0) | 9320(+0) |
-Total Static RAM memory (data + bss): 12248(+0) bytes
-Total Flash memory (text + data): 60091(+0) bytes
+...
+Image: ./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bin
+```
 
-Image: ./BUILD/K64F/GCC_ARM/mbed-os-example-blinky.bin
+**Note** By default, this example is built with the Mbed OS `bare-metal` build profile which only includes the `drivers` and `platform` libraries and contains no RTOS. As a result, the thread and stack information will not be displayed and the CPU stats with the RTOS-less wait simply run at 100% usage.
+
+To disable the `bare-metal` profile, remove the following line from `mbed_app.json`
+
+```
+    "requires": ["bare-metal"],
 ```
 
 ### Program your board
@@ -69,7 +57,7 @@ The LED on your platform turns on and off. The main thread will additionally tak
 * Heap Statistics
     * Current heap size
     * Max heap size which refers to the largest the heap has grown to
-* Thread Statistics
+* Thread Statistics [Disabled in bare-metal]
     * Provides information on all running threads in the OS including
         * Thread ID
         * Thread Name
@@ -104,7 +92,6 @@ The LED on your platform turns on and off. The main thread will additionally tak
 |[3:0]      | Revision          | Minor revision: 0x1 = Patch 1 |
 
 
-
 You can view individual examples and additional API information of the statistics collection tools at the bottom of the page in the [related links section](#related-links).
 
 
@@ -114,45 +101,7 @@ To view the serial output you can use any terminal client of your choosing such 
 
 You can find more information on the Mbed OS configuration tools and serial communication in Mbed OS in the related [related links section](#related-links).
 
-The output should contain the following block transmitted at the blinking LED frequency (actual values may vary depending on your target, build profile, and toolchain):
-
-```
-=============================== SYSTEM INFO  ================================
-Mbed OS Version: 999999
-CPU ID: 0x410fc241
-Compiler ID: 2
-Compiler Version: 60300
-RAM0: Start 0x20000000 Size: 0x30000
-RAM1: Start 0x1fff0000 Size: 0x10000
-ROM0: Start 0x0 Size: 0x100000
-================= CPU STATS =================
-Idle: 98% Usage: 2%
-================ HEAP STATS =================
-Current heap: 1096
-Max heap size: 1096
-================ THREAD STATS ===============
-ID: 0x20001eac
-Name: main_thread
-State: 2
-Priority: 24
-Stack Size: 4096
-Stack Space: 3296
-
-ID: 0x20000f5c
-Name: idle_thread
-State: 1
-Priority: 1
-Stack Size: 512
-Stack Space: 352
-
-ID: 0x20000f18
-Name: timer_thread
-State: 3
-Priority: 40
-Stack Size: 768
-Stack Space: 664
-
-```
+The output should contain system information transmitted periodically over UART.
 
 ## Troubleshooting
 

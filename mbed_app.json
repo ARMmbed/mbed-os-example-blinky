@@ -1,4 +1,5 @@
 {
+    "requires": ["bare-metal"],
     "target_overrides": {
         "*": {
             "platform.stack-stats-enabled": true,
