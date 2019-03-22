@@ -15,7 +15,7 @@ cd mbed-os-example-blinky
 
 ### Now compile
 
-Invoke `mbed compile`, and specify the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler 5:
+Invoke `mbed compile`, and specify the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the Arm Compiler:
 
 ```
 mbed compile -m K64F -t ARM
@@ -25,25 +25,6 @@ Your PC may take a few minutes to compile your code. At the end, you see the fol
 
 ```
 [snip]
-+----------------------------+-------+-------+------+
-| Module             |     .text |    .data |     .bss |
-|--------------------|-----------|----------|----------|
-| [fill]             |    98(+0) |    0(+0) | 2211(+0) |
-| [lib]/c.a          | 27835(+0) | 2472(+0) |   89(+0) |
-| [lib]/gcc.a        |  3168(+0) |    0(+0) |    0(+0) |
-| [lib]/misc         |   248(+0) |    8(+0) |   28(+0) |
-| [lib]/nosys.a      |    32(+0) |    0(+0) |    0(+0) |
-| main.o             |   924(+0) |    0(+0) |   12(+0) |
-| mbed-os/components |   134(+0) |    0(+0) |    0(+0) |
-| mbed-os/drivers    |    56(+0) |    0(+0) |    0(+0) |
-| mbed-os/features   |    42(+0) |    0(+0) |  184(+0) |
-| mbed-os/hal        |  2087(+0) |    8(+0) |  152(+0) |
-| mbed-os/platform   |  3633(+0) |  260(+0) |  209(+0) |
-| mbed-os/rtos       |  9370(+0) |  168(+0) | 6053(+0) |
-| mbed-os/targets    |  9536(+0) |   12(+0) |  382(+0) |
-| Subtotals          | 57163(+0) | 2928(+0) | 9320(+0) |
-Total Static RAM memory (data + bss): 12248(+0) bytes
-Total Flash memory (text + data): 60091(+0) bytes
 
 Image: ./BUILD/K64F/GCC_ARM/mbed-os-example-blinky.bin
 ```
