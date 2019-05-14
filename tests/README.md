@@ -8,5 +8,5 @@ mbedhtrun -d D: -p COM4 -m K64F -f .\BUILD\K64F\GCC_ARM\blinky.bin --compare-log
 ```
 
 
-More details about `htrun` are [here](https://github.com/ARMmbed/htrun#testing-mbed-os-examples).
+More details about `htrun` are [here](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-host-tests#testing-mbed-os-examples).
 
