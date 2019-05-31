@@ -1,7 +1,7 @@
 =============================== SYSTEM INFO  ================================
 Mbed OS Version:
 CPU ID: 0x[0-9a-fA-F]+
-Compiler ID: 1
+Compiler ID: \d+
 Compiler Version:
 ================= CPU STATS =================
 Idle: \d+% Usage: \d+%
