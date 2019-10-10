@@ -1,5 +1,5 @@
 /* mbed Microcontroller Library
- * Copyright (c) 2018 ARM Limited
+ * Copyright (c) 2018-2019 ARM Limited
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -7,12 +7,6 @@
 #include "platform/mbed_thread.h"
 #include "stats_report.h"
 
-DigitalOut led1(LED1);
-
-#define SLEEP_TIME                  500 // (msec)
-#define PRINT_AFTER_N_LOOPS         20
-
-// main() runs in its own thread in the OS
 int main()
 {
     SystemReport sys_state( SLEEP_TIME * PRINT_AFTER_N_LOOPS /* Loop delay time in ms */);

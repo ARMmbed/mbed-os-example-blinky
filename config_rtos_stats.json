@@ -1,6 +1,8 @@
 {
+
     "target_overrides": {
         "*": {
+            "target.macros_add" : ["MBED_SYS_STAT_REPORT"],
             "platform.stack-stats-enabled": true,
             "platform.heap-stats-enabled": true,
             "platform.cpu-stats-enabled": true,
