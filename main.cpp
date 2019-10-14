@@ -4,7 +4,7 @@
  */
 
 #include "mbed.h"
-#include "ThisThread.h"
+#include "platform/mbed_thread.h"
 #include "stats_report.h"
 
 DigitalOut led1(LED1);
@@ -21,7 +21,7 @@ int main()
     while (true) {
         // Blink LED and wait 0.5 seconds
         led1 = !led1;
-        ThisThread::sleep_for(SLEEP_TIME);
+        thread_sleep_for(SLEEP_TIME);
 
         if ((0 == count) || (PRINT_AFTER_N_LOOPS == count)) {
             // Following the main thread wait, report on the current system status
