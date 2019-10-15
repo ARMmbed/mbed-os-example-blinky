@@ -1,7 +1,0 @@
-{
-    "target_overrides": {
-        "*": {
-            "target.macros_add" : ["BLINKY_MULTITHREADED"]
-        }
-    }
-}

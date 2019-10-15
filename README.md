@@ -1,6 +1,6 @@
 # Blinky Mbed OS Example
 
-The example project contains variants of an application to blink an LED on supported [Mbed boards](https://os.mbed.com/platforms/).
+The example project contains an application to blink an LED on supported [Mbed boards](https://os.mbed.com/platforms/).
 
 The project can be built with all supported [Mbed OS build tools](https://os.mbed.com/docs/mbed-os/latest/tools/index.html). However, this example project specifically refers to the command line interface tool [Arm Mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli). Please install Arm Mbed CLI.
 
@@ -14,18 +14,11 @@ Clone this repository on your system and change the current directory to where t
 
 Modifying default Mbed OS configuration parameters can be done at application level using an application configuration file. By default ARM Mbed CLI looks for [`mbed_app.json`](https://os.mbed.com/docs/mbed-os/latest/reference/configuration.html), however the configuration file can be named anything. It can be passed to ARM Mbed CLI using the optional argument `--app-config` of the `compile` sub-command. This project comes with configuration files for the different variants and configurations of the blinky application.
 
-Select the section for the variant of the application you wish to build:
-* [Blinky Wait application](#blinky_wait)
-    * [Bare metal](#blinky_wait_bare_metal)
-* [Blinky multi-threaded application](#blinky_multi_threaded)
+## Application functionality
 
-## <a name="blinky_wait"></a> Blinky Wait application
+The `main()` function is the single thread in the application, it toggles the state of a digital output connected to an LED on the target.
 
-### Application functionality
-
-The `main()` function calls `blinky_wait()`, as part of the single thread, which toggles the state of a digital output connected to an LED on the target.
-
-### <a name="build_blinky_wait_rtos"></a> Building and Running
+## Building and Running
 
 1. Connect a USB cable between the USB port on the target and the host computer.
 2. Run the following command to build the example project and program the microcontroller flash memory:
@@ -34,6 +27,7 @@ The `main()` function calls `blinky_wait()`, as part of the single thread, which
     ```
 The binary is located at `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bin` and can alternatively be manually copied to the target which gets mounted on the host computer via USB.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ### Application functionality
 
@@ -45,17 +39,23 @@ The `main()` function calls `blinky_rtos()`, as part of the main thread, which s
 The variant of the application [above](#build_blinky_wait_rtos) is built with the full Mbed OS library including its RTOS components. However, for single-threaded applications running on targets with ultraconstrains, it is possible to obtain an application with an even smaller memory footprint using [Mbed OS bare metal](https://os.mbed.com/docs/mbed-os/latest/reference/mbed-os-bare-metal.html) profile.
 An application configuration file, [`config_blinky_wait_bare_metal.json`](./blinky_wait/config_blinky_wait_bare_metal.json) is provided to build a binary with Mbed OS bare metal profile.
 >>>>>>> Add application variants and Mbed OS bare metal tutorial
+=======
+## Bare metal
+The application above is built with the full Mbed OS library including its RTOS components. However, for single-threaded applications running on targets with ultraconstrains, it is possible to obtain an application with an even smaller memory footprint using [Mbed OS bare metal](https://os.mbed.com/docs/mbed-os/latest/reference/mbed-os-bare-metal.html) profile.
+An application configuration file, [`config_bare_metal.json`](./config_bare_metal.json) is provided to build a binary with Mbed OS bare metal profile.
+>>>>>>> Remove multithreaded application
 
 1. Connect a USB cable between the USB port on the target and the host computer.
 2. Run the following command to build the example project with runtime statistics output:
     ```bash
-    $ mbed compile -m <TARGET> -t <TOOLCHAIN> --app-config=./blinky_wait/config_blinky_bare_metal.json --flash
+    $ mbed compile -m <TARGET> -t <TOOLCHAIN> --app-config config_bare_metal.json --flash
     ```
 The binary is located at `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bin` and can alternatively be manually copied to the target which gets mounted on the host computer via USB.
 
 `"target.default_lib" : "small"` tells the build tool to use a small implementation of the C standard library for the toolchain selected if available. That would be Newlib-nano and MicroLib for GCC_ARM and ARM toolchains respectively.
 
 
+<<<<<<< HEAD
 ## <a name="blinky_multi_threaded"></a> Blinky multi-threaded application
 
 This variant shows Mbed OS features suchs as threads, thread delay, and inter-thread communication to blink an LED.
@@ -74,6 +74,9 @@ The `main()` function calls `blinky_multithreaded()`, as part of the main thread
 The binary is located at `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bin` and can alternatively be manually copied to the target which gets mounted on the host computer via USB.
 
 ### Optional RTOS runtime statistics
+=======
+## Optional RTOS runtime statistics
+>>>>>>> Remove multithreaded application
 
 It is possible to take a snapshot of the device's runtime statistics and display it over serial to your PC. See how [here](https://os.mbed.com/docs/latest/apis/mbed-statistics.html).
 
