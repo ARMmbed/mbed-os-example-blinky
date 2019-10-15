@@ -1,4 +1,5 @@
-# Blinky Mbed OS Example [Official]
+![](./resources/official_armmbed_example_badge.png)
+# Blinky Mbed OS Example
 
 The example project contains an application to blink an LED on supported [Mbed boards](https://os.mbed.com/platforms/).
 
