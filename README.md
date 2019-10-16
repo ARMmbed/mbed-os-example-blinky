@@ -1,11 +1,11 @@
 ![](./resources/official_armmbed_example_badge.png)
 # Blinky Mbed OS Example
 
-The example project contains an application to blink an LED on supported [Mbed boards](https://os.mbed.com/platforms/).
+The example project is part of the [Arm Mbed OS quick start guide](https://os.mbed.com/docs/mbed-os/v5.14/quick-start/index.html). It contains an application to repeatedly blink an LED on supported [Mbed boards](https://os.mbed.com/platforms/).
 
 The project can be built with all supported [Mbed OS build tools](https://os.mbed.com/docs/mbed-os/latest/tools/index.html). However, this example project specifically refers to the command line interface tool [Arm Mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli). Please install Arm Mbed CLI.
 
-Depending on the target, the example project can be built with GCC_ARM, ARM or IAR toolchain. Run the command below after installing ARM Mbed CLI to determine which toolchain support your target.
+Depending on the target, the example project can be built with GCC_ARM, ARM or IAR toolchain. Run the command below after installing ARM Mbed CLI to determine which toolchain supports your target.
 
 ```bash
 $ mbed compile -S
@@ -13,7 +13,7 @@ $ mbed compile -S
 
 Clone this repository on your system and change the current directory to where the project was cloned.
 
-Modifying default Mbed OS configuration parameters can be done at application level using an application configuration file. By default ARM Mbed CLI looks for [`mbed_app.json`](https://os.mbed.com/docs/mbed-os/latest/reference/configuration.html), however the configuration file can be named anything. It can be passed to ARM Mbed CLI using the optional argument `--app-config` of the `compile` sub-command. This project comes with configuration files for the different variants and configurations of the blinky application.
+Modifying default Mbed OS configuration parameters can be done at application level using an application configuration file. By default ARM Mbed CLI looks for [`mbed_app.json`](https://os.mbed.com/docs/mbed-os/latest/reference/configuration.html), however the configuration file can be named anything. It can be passed to ARM Mbed CLI using the optional argument `--app-config` of the `compile` sub-command. This project comes with a configuration a file to modify default parameters of Mbed OS later on in the tutorial.
 
 ## Application functionality
 
@@ -22,25 +22,20 @@ The `main()` function is the single thread in the application, it toggles the st
 ## Building and Running
 
 1. Connect a USB cable between the USB port on the target and the host computer.
-2. Run the following command to build the example project and program the microcontroller flash memory:
+2. <a name="build_cmd"></a> Run the following command to build the example project and program the microcontroller flash memory:
     ```bash
     $ mbed compile -m <TARGET> -t <TOOLCHAIN> --flash
     ```
 The binary is located at `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bin` and can alternatively be manually copied to the target which gets mounted on the host computer via USB.
 
 ## Bare metal
-The application above is built with the full Mbed OS library including its RTOS components. However, for single-threaded applications running on targets with ultraconstrains, it is possible to obtain an application with an even smaller memory footprint using [Mbed OS bare metal](https://os.mbed.com/docs/mbed-os/latest/reference/mbed-os-bare-metal.html) profile.
+The binary above is built with the full Mbed OS library including its RTOS components. However, for single-threaded applications running on ultra-constrained targets, it is possible to obtain an application with an even smaller memory footprint using [Mbed OS bare metal](https://os.mbed.com/docs/mbed-os/latest/reference/mbed-os-bare-metal.html) profile.
 An application configuration file, [`config_bare_metal.json`](./config_bare_metal.json) is provided to build a binary with Mbed OS bare metal profile.
 
-1. Connect a USB cable between the USB port on the target and the host computer.
-2. Run the following command to build the example project with runtime statistics output:
-    ```bash
-    $ mbed compile -m <TARGET> -t <TOOLCHAIN> --app-config config_bare_metal.json --flash
-    ```
-The binary is located at `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bin` and can alternatively be manually copied to the target which gets mounted on the host computer via USB.
-
-`"target.default_lib" : "small"` tells the build tool to use a small implementation of the C standard library for the toolchain selected if available. That would be Newlib-nano and MicroLib for GCC_ARM and ARM toolchains respectively.
-
+Run the following command instead of the one [above](#build_cmd) to build with Mbed OS bare metal profile:
+```bash
+$ mbed compile -m <TARGET> -t <TOOLCHAIN> --app-config config_bare_metal.json --flash
+```
 
 ## Optional RTOS runtime statistics
 
