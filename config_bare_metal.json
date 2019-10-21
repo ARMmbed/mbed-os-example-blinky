@@ -1,8 +1,0 @@
-{
-    "requires": ["bare-metal"],
-    "target_overrides": {
-        "*": {
-            "target.default_lib" : "small"
-        }
-    }
-}
