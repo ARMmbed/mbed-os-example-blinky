@@ -5,14 +5,7 @@ The example project is part of the [Arm Mbed OS quick start guide](https://os.mb
 
 The project can be built with all supported [Mbed OS build tools](https://os.mbed.com/docs/mbed-os/latest/tools/index.html). However, this example project specifically refers to the command line interface tool [Arm Mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli). Please install Arm Mbed CLI.
 
-Depending on the target, the example project can be built with `GCC_ARM`, `ARM` or `IAR` toolchain. Run the command below after installing ARM Mbed CLI to determine which toolchain supports your target.
-
-```bash
-$ mbed compile -S
-```
-
 Clone this repository on your system and change the current directory to where the project was cloned.
-
 
 ## Application functionality
 
@@ -27,6 +20,11 @@ The `main()` function is the single thread in the application, it toggles the st
     ```
 The binary is located at `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bin` and can alternatively be manually copied to the target which gets mounted on the host computer via USB.
 
+Depending on the target, the example project can be built with `GCC_ARM`, `ARM` or `IAR` toolchain. Run the command below after installing ARM Mbed CLI to determine which toolchain supports your target.
+
+```bash
+$ mbed compile -S
+```
 
 ## Troubleshooting
 If you have problems, you can review the [documentation](https://os.mbed.com/docs/latest/tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
