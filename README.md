@@ -26,6 +26,10 @@ Depending on the target, the example project can be built with `GCC_ARM`, `ARM` 
 $ mbed compile -S
 ```
 
+## Expected output
+The LED on your target turns on and off every 500 milliseconds.
+
+
 ## Troubleshooting
 If you have problems, you can review the [documentation](https://os.mbed.com/docs/latest/tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
 
