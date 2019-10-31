@@ -3,7 +3,10 @@
 
 The example project is part of the [Arm Mbed OS quick start guide](https://os.mbed.com/docs/mbed-os/v5.14/quick-start/index.html). It contains an application to repeatedly blink an LED on supported [Mbed boards](https://os.mbed.com/platforms/).
 
-The project can be built with all supported [Mbed OS build tools](https://os.mbed.com/docs/mbed-os/latest/tools/index.html). However, this example project specifically refers to the command line interface tool [Arm Mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli). Please install Arm Mbed CLI.
+The project can be built with all supported [Mbed OS build tools](https://os.mbed.com/docs/mbed-os/latest/tools/index.html). However, this example project specifically refers to the command line interface tool [Arm Mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli).
+(Note: To see a rendered example you can import into the Arm Online Compiler, please see our [import quick start](https://os.mbed.com/docs/mbed-os/latest/quick-start/online-with-the-online-compiler.html#importing-the-code).)
+
+Please install Arm Mbed CLI.
 
 Clone this repository on your system and change the current directory to where the project was cloned.
 
