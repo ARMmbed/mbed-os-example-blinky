@@ -8,7 +8,18 @@ The project can be built with all supported [Mbed OS build tools](https://os.mbe
 
 Please install Arm Mbed CLI.
 
-Clone this repository on your system and change the current directory to where the project was cloned.
+Clone this repository on your system and change the current directory to where the project was cloned:
+
+```bash
+$ git clone git@github.com:armmbed/mbed-os-example-blinky && cd mbed-os-example-blinky
+```
+
+It is also possible to download the example project with Arm Mbed CLI using the `import` sub-command as follows:
+
+```bash
+$ mbed import mbed-os-example-blinky && cd mbed-os-example-blinky
+```
+
 
 ## Application functionality
 
