@@ -10,15 +10,15 @@ You can build the project with all supported [Mbed OS build tools](https://os.mb
 
 1. Clone this repository on your system, and change the current directory to where the project was cloned:
 
-```bash
-$ git clone git@github.com:armmbed/mbed-os-example-blinky && cd mbed-os-example-blinky
-```
+    ```bash
+    $ git clone git@github.com:armmbed/mbed-os-example-blinky && cd mbed-os-example-blinky
+    ```
 
-Alternatively, you can download the example project with Arm Mbed CLI using the `import` subcommand:
+    Alternatively, you can download the example project with Arm Mbed CLI using the `import` subcommand:
 
-```bash
-$ mbed import mbed-os-example-blinky && cd mbed-os-example-blinky
-```
+    ```bash
+    $ mbed import mbed-os-example-blinky && cd mbed-os-example-blinky
+    ```
 
 
 ## Application functionality
@@ -36,11 +36,11 @@ The binary is located at `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bi
 
 Alternatively, you can manually copy the binary to the board, which you mount on the host computer over USB.
 
-1. Depending on the target, you can build the example project with the `GCC_ARM`, `ARM` or `IAR` toolchain. After installing Arm Mbed CLI, run the command below to determine which toolchain supports your target.
+Depending on the target, you can build the example project with the `GCC_ARM`, `ARM` or `IAR` toolchain. After installing Arm Mbed CLI, run the command below to determine which toolchain supports your target.
 
-```bash
-$ mbed compile -S
-```
+    ```bash
+    $ mbed compile -S
+    ```
 
 ## Expected output
 The LED on your target turns on and off every 500 milliseconds.
