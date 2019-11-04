@@ -36,7 +36,7 @@ The binary is located at `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bi
 
 Alternatively, you can manually copy the binary to the board, which you mount on the host computer over USB.
 
-Depending on the target, you can build the example project with the `GCC_ARM`, `ARM` or `IAR` toolchain. After installing Arm Mbed CLI, run the command below to determine which toolchain supports your target.
+Depending on the target, you can build the example project with the `GCC_ARM`, `ARM` or `IAR` toolchain. After installing Arm Mbed CLI, run the command below to determine which toolchain supports your target:
 
     ```bash
     $ mbed compile -S
@@ -51,11 +51,11 @@ If you have problems, you can review the [documentation](https://os.mbed.com/doc
 
 ## Related Links
 
-* [Mbed OS Stats API](https://os.mbed.com/docs/latest/apis/mbed-statistics.html)
-* [Mbed OS Configuration](https://os.mbed.com/docs/latest/reference/configuration.html)
-* [Mbed OS Serial Communication](https://os.mbed.com/docs/latest/tutorials/serial-communication.html)
+* [Mbed OS Stats API](https://os.mbed.com/docs/latest/apis/mbed-statistics.html).
+* [Mbed OS Configuration](https://os.mbed.com/docs/latest/reference/configuration.html).
+* [Mbed OS Serial Communication](https://os.mbed.com/docs/latest/tutorials/serial-communication.html).
 * [Mbed OS bare metal](https://os.mbed.com/docs/mbed-os/latest/reference/mbed-os-bare-metal.html).
-* [Mbed boards](https://os.mbed.com/platforms/)
+* [Mbed boards](https://os.mbed.com/platforms/).
 
 ### License and contributions
 
