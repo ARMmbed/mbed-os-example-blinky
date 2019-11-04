@@ -1,20 +1,20 @@
 ![](./resources/official_armmbed_example_badge.png)
-# Blinky Mbed OS Example
+# Blinky Mbed OS example
 
 The example project is part of the [Arm Mbed OS Official Examples](https://os.mbed.com/code/) and is the [getting started example for Mbed OS](https://os.mbed.com/docs/mbed-os/v5.14/quick-start/index.html). It contains an application that repeatedly blinks an LED on supported [Mbed boards](https://os.mbed.com/platforms/).
 
-The project can be built with all supported [Mbed OS build tools](https://os.mbed.com/docs/mbed-os/latest/tools/index.html). However, this example project specifically refers to the command line interface tool [Arm Mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli).
+You can build the project with all supported [Mbed OS build tools](https://os.mbed.com/docs/mbed-os/latest/tools/index.html). However, this example project specifically refers to the command-line interface tool [Arm Mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli).
 (Note: To see a rendered example you can import into the Arm Online Compiler, please see our [import quick start](https://os.mbed.com/docs/mbed-os/latest/quick-start/online-with-the-online-compiler.html#importing-the-code).)
 
-Please install Arm Mbed CLI.
+1. [Install Mbed CLI](https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html).
 
-Clone this repository on your system and change the current directory to where the project was cloned:
+1. Clone this repository on your system, and change the current directory to where the project was cloned:
 
 ```bash
 $ git clone git@github.com:armmbed/mbed-os-example-blinky && cd mbed-os-example-blinky
 ```
 
-It is also possible to download the example project with Arm Mbed CLI using the `import` sub-command as follows:
+Alternatively, you can download the example project with Arm Mbed CLI using the `import` subcommand:
 
 ```bash
 $ mbed import mbed-os-example-blinky && cd mbed-os-example-blinky
@@ -23,18 +23,20 @@ $ mbed import mbed-os-example-blinky && cd mbed-os-example-blinky
 
 ## Application functionality
 
-The `main()` function is the single thread in the application, it toggles the state of a digital output connected to an LED on the target.
+The `main()` function is the single thread in the application. It toggles the state of a digital output connected to an LED on the board.
 
-## Building and Running
+## Building and running
 
-1. Connect a USB cable between the USB port on the target and the host computer.
+1. Connect a USB cable between the USB port on the board and the host computer.
 2. <a name="build_cmd"></a> Run the following command to build the example project and program the microcontroller flash memory:
     ```bash
     $ mbed compile -m <TARGET> -t <TOOLCHAIN> --flash
     ```
-The binary is located at `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bin` and can alternatively be manually copied to the target which gets mounted on the host computer via USB.
+The binary is located at `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bin`.
 
-Depending on the target, the example project can be built with `GCC_ARM`, `ARM` or `IAR` toolchain. Run the command below after installing ARM Mbed CLI to determine which toolchain supports your target.
+Alternatively, you can manually copy the binary to the board, which you mount on the host computer over USB.
+
+1. Depending on the target, you can build the example project with the `GCC_ARM`, `ARM` or `IAR` toolchain. After installing Arm Mbed CLI, run the command below to determine which toolchain supports your target.
 
 ```bash
 $ mbed compile -S
@@ -52,7 +54,7 @@ If you have problems, you can review the [documentation](https://os.mbed.com/doc
 * [Mbed OS Stats API](https://os.mbed.com/docs/latest/apis/mbed-statistics.html)
 * [Mbed OS Configuration](https://os.mbed.com/docs/latest/reference/configuration.html)
 * [Mbed OS Serial Communication](https://os.mbed.com/docs/latest/tutorials/serial-communication.html)
-* [Mbed OS bare metal](https://os.mbed.com/docs/mbed-os/latest/reference/mbed-os-bare-metal.html)
+* [Mbed OS bare metal](https://os.mbed.com/docs/mbed-os/latest/reference/mbed-os-bare-metal.html).
 * [Mbed boards](https://os.mbed.com/platforms/)
 
 ### License and contributions
