@@ -38,9 +38,9 @@ Alternatively, you can manually copy the binary to the board, which you mount on
 
 Depending on the target, you can build the example project with the `GCC_ARM`, `ARM` or `IAR` toolchain. After installing Arm Mbed CLI, run the command below to determine which toolchain supports your target:
 
-    ```bash
-    $ mbed compile -S
-    ```
+```bash
+$ mbed compile -S
+```
 
 ## Expected output
 The LED on your target turns on and off every 500 milliseconds.
