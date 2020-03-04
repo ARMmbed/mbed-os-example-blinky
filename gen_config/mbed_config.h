@@ -96,7 +96,7 @@
 #define MBED_CONF_FAT_CHAN_FF_VOLUME_STRS                                     "RAM","NAND","CF","SD","SD2","USB","USB2","USB3"                                                 // set by library:fat_chan
 #define MBED_CONF_FAT_CHAN_FLUSH_ON_NEW_CLUSTER                               0                                                                                                // set by library:fat_chan
 #define MBED_CONF_FAT_CHAN_FLUSH_ON_NEW_SECTOR                                1                                                                                                // set by library:fat_chan
-#define MBED_CONF_FILESYSTEM_PRESENT                                          1                                                                                                // set by library:filesystem
+#define MBED_CONF_FILESYSTEM_PRESENT                                          0                                                                                                // set by library:filesystem
 #define MBED_CONF_FLASHIAP_BLOCK_DEVICE_BASE_ADDRESS                          0xFFFFFFFF                                                                                       // set by library:flashiap-block-device
 #define MBED_CONF_FLASHIAP_BLOCK_DEVICE_SIZE                                  0                                                                                                // set by library:flashiap-block-device
 #define MBED_CONF_GEMALTO_CINTERION_BAUDRATE                                  115200                                                                                           // set by library:GEMALTO_CINTERION
@@ -218,7 +218,7 @@
 #define MBED_CONF_NSAPI_DNS_RESPONSE_WAIT_TIME                                10000                                                                                            // set by library:nsapi
 #define MBED_CONF_NSAPI_DNS_RETRIES                                           1                                                                                                // set by library:nsapi
 #define MBED_CONF_NSAPI_DNS_TOTAL_ATTEMPTS                                    10                                                                                               // set by library:nsapi
-#define MBED_CONF_NSAPI_PRESENT                                               1                                                                                                // set by library:nsapi
+#define MBED_CONF_NSAPI_PRESENT                                               0                                                                                                // set by library:nsapi
 #define MBED_CONF_NSAPI_SOCKET_STATS_ENABLED                                  0                                                                                                // set by library:nsapi
 #define MBED_CONF_NSAPI_SOCKET_STATS_MAX_COUNT                                10                                                                                               // set by library:nsapi
 #define MBED_CONF_PLATFORM_CRASH_CAPTURE_ENABLED                              1                                                                                                // set by library:platform[K64F]
@@ -351,5 +351,7 @@
 #define NS_USE_EXTERNAL_MBED_TLS                                                                                                                                               // defined by library:nanostack
 #define UNITY_INCLUDE_CONFIG_H                                                                                                                                                 // defined by library:utest
 #define _RTE_                                                                                                                                                                  // defined by library:rtos
+
+#define MBED_CRC_TABLE_SIZE 16
 
 #endif
