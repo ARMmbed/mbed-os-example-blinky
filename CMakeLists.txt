@@ -2,7 +2,7 @@
 # If you would like to add your own targets, create a
 # project.cmake file locally in your project directory.
 
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.13)
 
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_CROSSCOMPILING TRUE)
@@ -20,10 +20,12 @@ set(ELF2BIN               "arm-none-eabi-objcopy")
 
 # if the environment does not specify build type, set to Debug
 if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE "Release"
+  set(CMAKE_BUILD_TYPE "RelWithDebInfo"
         CACHE STRING "Choose the type of build, options are: Debug Release RelWithDebInfo MinSizeRel."
         FORCE)
 endif()
+
+enable_language(C CXX ASM)
 
 # here starts the project
 project(mbed-os-example-blinky C CXX ASM)
