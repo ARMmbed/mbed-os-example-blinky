@@ -4,11 +4,10 @@
  */
 
 #include "mbed.h"
-#include "platform/mbed_thread.h"
 
 
 // Blinking rate in milliseconds
-#define BLINKING_RATE_MS                                                    500
+#define BLINKING_RATE_MS     500
 
 
 int main()
@@ -18,6 +17,6 @@ int main()
 
     while (true) {
         led = !led;
-        thread_sleep_for(BLINKING_RATE_MS);
+        ThisThread::sleep_for(BLINKING_RATE_MS);
     }
 }
