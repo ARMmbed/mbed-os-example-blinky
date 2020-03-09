@@ -1,5 +1,9 @@
 # SPDX-License-Identifier: Apache-2.0
 
+# TODO: @mbed-os-tools This should not only contain macros
+# but also target related info. They are now in toolchain.cmake
+# They should be moved here once
+
 add_definitions(
   -DARM_MATH_CM4
   -DCOMPONENT_FLASHIAP=1
