@@ -16,5 +16,3 @@ project(mbed-os-example-blinky)
 
 # Sources for main application
 target_sources(app PRIVATE main.cpp)
-
-set_target_properties(app PROPERTIES ENABLE_EXPORTS 1) # TODO: What is that?
