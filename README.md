@@ -7,19 +7,8 @@ You can build the project with all supported [Mbed OS build tools](https://os.mb
 (Note: To see a rendered example you can import into the Arm Online Compiler, please see our [import quick start](https://os.mbed.com/docs/mbed-os/latest/quick-start/online-with-the-online-compiler.html#importing-the-code).)
 
 1. [Install Mbed CLI](https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html).
-
-1. Clone this repository on your system, and change the current directory to where the project was cloned:
-
-    ```bash
-    $ git clone git@github.com:armmbed/mbed-os-example-blinky && cd mbed-os-example-blinky
-    ```
-
-    Alternatively, you can download the example project with Arm Mbed CLI using the `import` subcommand:
-
-    ```bash
-    $ mbed import mbed-os-example-blinky && cd mbed-os-example-blinky
-    ```
-
+1. From the command-line, import the example: `mbed import mbed-os-example-blinky`
+1. Change the current directory to where the project was imported.
 
 ## Application functionality
 
@@ -28,10 +17,14 @@ The `main()` function is the single thread in the application. It toggles the st
 ## Building and running
 
 1. Connect a USB cable between the USB port on the board and the host computer.
-2. <a name="build_cmd"></a> Run the following command to build the example project and program the microcontroller flash memory:
+1. Run the following command to build the example project and program the microcontroller flash memory:
+
     ```bash
     $ mbed compile -m <TARGET> -t <TOOLCHAIN> --flash
     ```
+
+Your PC may take a few minutes to compile your code.
+
 The binary is located at `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bin`.
 
 Alternatively, you can manually copy the binary to the board, which you mount on the host computer over USB.
