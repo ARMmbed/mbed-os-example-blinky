@@ -7,7 +7,7 @@
 
 
 // Blinking rate in milliseconds
-#define BLINKING_RATE_MS     500
+#define BLINKING_RATE     500ms
 
 
 int main()
@@ -17,6 +17,6 @@ int main()
 
     while (true) {
         led = !led;
-        ThisThread::sleep_for(BLINKING_RATE_MS);
+        ThisThread::sleep_for(BLINKING_RATE);
     }
 }
