@@ -1,3 +1,4 @@
+# Copyright (c) 2020 ARM Limited. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
 cmake_minimum_required(VERSION 3.13)
@@ -5,14 +6,21 @@ cmake_minimum_required(VERSION 3.13)
 # Mbed OS system root path - that probably needs to come from tools
 # TODO: @mbed-os-tools
 set(MBED_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/mbed-os CACHE INTERNAL "")
+set(MBED_CONFIG_PATH ${CMAKE_CURRENT_SOURCE_DIR}/.mbedbuild CACHE INTERNAL "")
+set(APP_TARGET mbed-os-example-blinky)
 
-# Include standard Mbed definitions
-include(${MBED_ROOT}/cmake/app.cmake)
+add_subdirectory(${MBED_ROOT})
 
-project(mbed-os-example-blinky)
+project(${APP_TARGET})
 
-# uncomment below to have a verbose build process
-#set(CMAKE_VERBOSE_MAKEFILE ON)
+option(VERBOSE_BUILD "Have a verbose build process")
+if(VERBOSE_BUILD)
+    set(CMAKE_VERBOSE_MAKEFILE ON)
+endif()
 
-# Sources for main application
-target_sources(app PRIVATE main.cpp)
+target_sources(${APP_TARGET}
+    PRIVATE
+        main.cpp
+)
+
+target_link_libraries(${APP_TARGET} mbed-os)
