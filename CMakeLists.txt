@@ -12,6 +12,8 @@ add_subdirectory(${MBED_ROOT})
 
 add_executable(${APP_TARGET})
 
+mbed_os_configure_app_target(${APP_TARGET})
+
 mbed_os_target_linker_script(${APP_TARGET})
 
 project(${APP_TARGET})
