@@ -12,9 +12,9 @@ add_subdirectory(${MBED_ROOT})
 
 add_executable(${APP_TARGET})
 
-mbed_os_configure_app_target(${APP_TARGET})
+mbed_configure_app_target(${APP_TARGET})
 
-mbed_os_target_linker_script(${APP_TARGET})
+mbed_set_mbed_target_linker_script(${APP_TARGET})
 
 project(${APP_TARGET})
 
@@ -25,7 +25,7 @@ target_sources(${APP_TARGET}
 
 target_link_libraries(${APP_TARGET} mbed-os)
 
-mbed_os_bin_hex(${APP_TARGET})
+mbed_generate_bin_hex(${APP_TARGET})
 
 option(VERBOSE_BUILD "Have a verbose build process")
 if(VERBOSE_BUILD)
