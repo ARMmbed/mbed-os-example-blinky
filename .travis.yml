@@ -1,0 +1,89 @@
+# Copyright (c) 2013-2020 Arm Limited. All rights reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# Licensed under the Apache License, Version 2.0 (the License); you may
+# not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an AS IS BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+language: sh
+os: linux
+dist: xenial
+
+cache:
+  pip: true
+  directories:
+    - ${HOME}/.cache/deps
+
+addons:
+  apt:
+    packages:
+    - ninja-build
+
+matrix:
+  include:
+
+    - &cmake-build-test
+      stage: "CMake"
+      name: "CMake blinky example - develop (K64F)"
+      env: NAME=cmake_test TARGET_NAME=K64F PROFILE=develop
+      language: python
+      python: 3.8
+      install:
+        # Install arm-none-eabi-gcc
+        - pushd /home/travis/build && mkdir arm-gcc && cd arm-gcc
+        - curl -L0 "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2?revision=05382cca-1721-44e1-ae19-1e7c3dc96118&la=en&hash=D7C9D18FCA2DD9F894FD9F3C3DC9228498FA281A" --output gcc-arm-none-eabi-9-2020-q2-update.tar.bz2
+        - tar xf gcc-arm-none-eabi-9-2020-q2-update.tar.bz2
+        - export PATH="${PWD}/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH"
+        - popd
+        - arm-none-eabi-gcc --version
+        - pip install --upgrade cmake
+        - pip install --upgrade mbed-tools
+        # Fetch mbed-os: We use manual clone, with depth=1 and --single-branch to save time.
+        - >-
+          git clone --depth=1 --single-branch --branch feature-cmake https://github.com/ARMmbed/mbed-os.git;
+        - >-
+          mbedtools configure -t GCC_ARM -m ${TARGET_NAME};
+          mkdir -p build
+      script:
+        - cd build && cmake .. -GNinja -DCMAKE_BUILD_TYPE=${PROFILE} && cmake --build .
+
+    - <<: *cmake-build-test
+      name: "CMake blinky example - release (K64F)"
+      env: NAME=cmake_test TARGET_NAME=K64F PROFILE=release
+
+    - <<: *cmake-build-test
+      name: "CMake blinky example - debug (K64F)"
+      env: NAME=cmake_test TARGET_NAME=K64F PROFILE=debug
+
+    - <<: *cmake-build-test
+      name: "CMake blinky example - develop (DISCO_L475VG_IOT01A)"
+      env: NAME=cmake_test TARGET_NAME=DISCO_L475VG_IOT01A PROFILE=develop
+
+    - <<: *cmake-build-test
+      name: "CMake blinky example - release (DISCO_L475VG_IOT01A)"
+      env: NAME=cmake_test TARGET_NAME=DISCO_L475VG_IOT01A PROFILE=release
+
+    - <<: *cmake-build-test
+      name: "CMake blinky example - debug (DISCO_L475VG_IOT01A)"
+      env: NAME=cmake_test TARGET_NAME=DISCO_L475VG_IOT01A PROFILE=debug
+
+    - <<: *cmake-build-test
+      name: "CMake blinky example - develop (NRF52840_DK)"
+      env: NAME=cmake_test TARGET_NAME=NRF52840_DK PROFILE=develop
+
+    - <<: *cmake-build-test
+      name: "CMake blinky example - release (NRF52840_DK)"
+      env: NAME=cmake_test TARGET_NAME=NRF52840_DK PROFILE=release
+
+    - <<: *cmake-build-test
+      name: "CMake blinky example - debug (NRF52840_DK)"
+      env: NAME=cmake_test TARGET_NAME=NRF52840_DK PROFILE=debug
