@@ -25,7 +25,7 @@ target_sources(${APP_TARGET}
 
 target_link_libraries(${APP_TARGET} mbed-os)
 
-mbed_generate_bin_hex(${APP_TARGET})
+mbed_generate_executable(${APP_TARGET})
 
 option(VERBOSE_BUILD "Have a verbose build process")
 if(VERBOSE_BUILD)
