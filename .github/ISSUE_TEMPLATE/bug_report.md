@@ -1,5 +1,5 @@
 ---
-name: Defect report
+name: Bug report
 about: Create a report to help us improve
 title: ''
 labels: 'type: bug'
@@ -15,9 +15,11 @@ assignees: ''
    template may cause the bot to automatically correct this header or may result in a 
    warning message, requesting updates.
 
-   Please ensure all sections of the template below are filled in and no changes 
-   are made to the template format. Only bugs should be raised here as issues. 
-   Questions or enhancements should instead be raised on our forums:
+   PLEASE ENSURE ALL SECTIONS OF THIS TEMPLATE ARE FILLED IN AND THAT THERE ARE
+   NO OTHER CHANGES TO THE TEMPLATE.    
+   
+   Only bugs should be raised here as issues. Questions or enhancements should instead be raised on 
+   our forums:
    https://forums.mbed.com/ .
 
    *************************************************************************************
@@ -42,12 +44,11 @@ assignees: ''
 <!--
     For a released version please provide the release tag (this can be found as per the instructions below)
 
-    mbed-os version can be found in /platform/mbed_version.h. The tag can be reconstructed as follows:
+    mbed-os version can be found in:
+    https://github.com/ARMmbed/mbed-os/blob/master/platform/include/platform/mbed_version.h
+    The tag can be reconstructed as follows:
     mbed-os-MBED_MAJOR_VERSION.MBED_MINOR_VERSION.MBED_PATCH_VERSION
- 
-    Master branch is indicated by 'mbed-os-99.99.99
-    
-    For an issue found on Master please provide the sha being used.
+     
 -->
 
 
