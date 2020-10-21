@@ -14,6 +14,8 @@ You can build the project with all supported [Mbed OS build tools](https://os.mb
 
 The `main()` function is the single thread in the application. It toggles the state of a digital output connected to an LED on the board.
 
+**Note**: This example requires a target with RTOS support, i.e. one with `rtos` declared in `supported_application_profiles` in `targets/targets.json` in [mbed-os](https://github.com/ARMmbed/mbed-os). For non-RTOS targets (usually with small memory sizes), please use [mbed-os-example-blinky-baremetal](https://github.com/ARMmbed/mbed-os-example-blinky-baremetal) instead.
+
 ## Building and running
 
 1. Connect a USB cable between the USB port on the board and the host computer.
@@ -52,6 +54,6 @@ If you have problems, you can review the [documentation](https://os.mbed.com/doc
 
 ### License and contributions
 
-The software is provided under Apache-2.0 license. Contributions to this project are accepted under the same license. Please see contributing.md for more info.
+The software is provided under Apache-2.0 license. Contributions to this project are accepted under the same license. Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for more info.
 
 This project contains code from other projects. The original license text is included in those source files. They must comply with our license guide.
