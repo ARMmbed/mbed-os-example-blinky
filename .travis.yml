@@ -76,7 +76,7 @@ matrix:
         - pip install --upgrade mbed-tools
         # Fetch mbed-os: We use manual clone, with depth=1 and --single-branch to save time.
         - >-
-          git clone --depth=1 --single-branch https://github.com/ARMmbed/mbed-os.git;
+          git clone --depth=1 --branch feature-cmake https://github.com/ARMmbed/mbed-os.git;
         - >-
       script:
         - echo mbedtools build -t GCC_ARM -m ${TARGET_NAME} -b ${PROFILE}
