@@ -18,6 +18,10 @@ language: sh
 os: linux
 dist: xenial
 
+env:
+  global:
+    - PROFILE=develop
+
 cache:
   pip: true
   ccache: true
@@ -28,8 +32,13 @@ cache:
 
 addons:
   apt:
+    sources:
+      - sourceline: 'deb https://apt.kitware.com/ubuntu/ xenial main'
+        key_url: 'https://apt.kitware.com/keys/kitware-archive-latest.asc'
+      - sourceline: 'deb https://apt.kitware.com/ubuntu/ xenial-rc main'
     packages:
-    - ninja-build
+      - cmake
+      - ninja-build
 
 matrix:
   include:
@@ -56,13 +65,21 @@ matrix:
         - export PATH="$PATH:${PWD}/gcc-arm-none-eabi-9-2020-q2-update/bin"
         - popd
         - arm-none-eabi-gcc --version
-        - pip install --upgrade cmake
+        # Hide Travis-preinstalled CMake
+        # The Travis-preinstalled CMake is unfortunately not installed via apt, so we
+        # can't replace it with an apt-supplied version very easily. Additionally, we
+        # can't permit the Travis-preinstalled copy to survive, as the Travis default
+        # path lists the Travis CMake install location ahead of any place where apt
+        # would install CMake to. Instead of apt removing or upgrading to a new CMake
+        # version, we must instead delete the Travis copy of CMake.
+        - sudo rm -rf /usr/local/cmake*
         - pip install --upgrade mbed-tools
         # Fetch mbed-os: We use manual clone, with depth=1 and --single-branch to save time.
         - >-
           git clone --depth=1 --single-branch https://github.com/ARMmbed/mbed-os.git;
         - >-
       script:
+        - echo mbedtools build -t GCC_ARM -m ${TARGET_NAME} -b ${PROFILE}
         - mbedtools build -t GCC_ARM -m ${TARGET_NAME} -b ${PROFILE}
         - ccache -s
 
