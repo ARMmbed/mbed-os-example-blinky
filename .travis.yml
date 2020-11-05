@@ -62,10 +62,8 @@ matrix:
         - >-
           git clone --depth=1 --single-branch https://github.com/ARMmbed/mbed-os.git;
         - >-
-          mbedtools configure -t GCC_ARM -m ${TARGET_NAME};
-          mkdir -p build
       script:
-        - cd build && cmake .. -GNinja -DCMAKE_BUILD_TYPE=${PROFILE} && cmake --build .
+        - mbedtools build -t GCC_ARM -m ${TARGET_NAME} -b ${PROFILE}
         - ccache -s
 
     - <<: *cmake-build-test
