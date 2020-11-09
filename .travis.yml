@@ -76,7 +76,7 @@ matrix:
         - pip install --upgrade mbed-tools
         - pip install prettytable==0.7.2
         - pip install future==0.16.0
-        - pip install Jinja2>=2.10.1,<2.11
+        - pip install "Jinja2>=2.10.1,<2.11"
         # Fetch mbed-os: We use manual clone, with depth=1 and --single-branch to save time.
         - >-
           git clone --depth=1 --single-branch https://github.com/ARMmbed/mbed-os.git;
