@@ -74,9 +74,10 @@ matrix:
         # version, we must instead delete the Travis copy of CMake.
         - sudo rm -rf /usr/local/cmake*
         - pip install --upgrade mbed-tools
+        - pip install --upgrade prettytable
         # Fetch mbed-os: We use manual clone, with depth=1 and --single-branch to save time.
         - >-
-          git clone --depth=1 https://github.com/ARMmbed/mbed-os.git;
+          git clone --depth=1 --single-branch https://github.com/ARMmbed/mbed-os.git;
         - >-
       script:
         - echo mbedtools build -t GCC_ARM -m ${TARGET_NAME} -b ${PROFILE}
