@@ -83,8 +83,8 @@ matrix:
           git clone --depth=1 --single-branch https://github.com/ARMmbed/mbed-os.git;
         - >-
       script:
-        - echo mbedtools build -t GCC_ARM -m ${TARGET_NAME} -b ${PROFILE}
-        - mbedtools build -t GCC_ARM -m ${TARGET_NAME} -b ${PROFILE}
+        - echo mbedtools compile -t GCC_ARM -m ${TARGET_NAME} -b ${PROFILE}
+        - mbedtools compile -t GCC_ARM -m ${TARGET_NAME} -b ${PROFILE}
         - ccache -s
 
     - <<: *cmake-build-test
