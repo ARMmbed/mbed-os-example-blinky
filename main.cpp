@@ -5,6 +5,12 @@
 
 #include "mbed.h"
 
+#ifndef LED1 // ACI usage
+#warning "No LED for this target"
+int main()
+{
+}
+#else
 
 // Blinking rate in milliseconds
 #define BLINKING_RATE     500ms
@@ -20,3 +26,5 @@ int main()
         ThisThread::sleep_for(BLINKING_RATE);
     }
 }
+
+#endif
