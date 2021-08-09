@@ -1,0 +1,18 @@
+name: a fake workflow to get GitHub Actions triggered
+
+on:
+  workflow_dispatch: 
+  push:
+  pull_request: 
+
+jobs: 
+  test-job:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        name: test-step
+        run: |
+          set -e
+          echo "test"
